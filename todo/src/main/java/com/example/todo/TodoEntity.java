@@ -33,7 +33,7 @@ public class TodoEntity {
 	private String content;
 	
 	@Schema(description="할 일 상태")
-	private String status;
+	private int status;
 	
 	@Schema(description="할 일 생성 시간")
 	private LocalDateTime createdAt;
@@ -45,11 +45,21 @@ public class TodoEntity {
 		this.title = title;
 		this.content = content;
 	}
-	public TodoEntity(String title, String content, String status) {
+	public TodoEntity(String title, String content, int status) {
 		this.title = title;
 		this.content = content;
 		this.status = status;
 	}
+
+    public void update(int status){
+        this.status = status;
+    }
+
+    public void update(String title, String content, int status){
+        this.title = title;
+        this.content = content;
+        this.status = status;
+    }
 	
 	@PrePersist
 	public void onCreate() { // 생성 시
