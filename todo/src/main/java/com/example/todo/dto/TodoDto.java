@@ -23,14 +23,14 @@ public class TodoDto {
 	@Schema(description="할 일 내용")
 	private String content;
 	@Schema(description="할 일 상태")
-	private String status;
+	private int status;
 	@Schema(description="할 일 생성 시간")
 	private LocalDateTime createdAt;
 	@Schema(description="할 일 수정 시간")
 	private LocalDateTime updatedAt;
 	
 	@Builder
-    public TodoDto(Long id, String title, String content, String status, LocalDateTime createdAt, LocalDateTime updatedAt){
+    public TodoDto(Long id, String title, String content, int status, LocalDateTime createdAt, LocalDateTime updatedAt){
         this.id = id;
         this.title = title;
         this.content = content;
